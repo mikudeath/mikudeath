@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+}
+.anchor{
+    float: right;
+    padding: 2px;
+    margin-right: 50px;
+    border: solid;
+    border-width: 3px;
+    border-color: green;
+    background-color: papayawhip;
+    color: slategrey;
+}
+.chat{
+    font-family: arial, sans-serif;
+    color: papayawhip;
+}
