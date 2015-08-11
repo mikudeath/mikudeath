@@ -46,13 +46,15 @@ def addToChat():
 	d = localtime()
 	curTime = "{0}.{1}.{2} - {3}.{4}.{5}".format(d[2], d[1], d[0], d[3], d[4], d[5])
 	username = "PyTester"
+	query = """INSERT INTO `chat`(`datetime`,`contents`,`username`)
+	VALUES('{0}', '{1}', '{2}')""".format(curTime,message, username)
 	try:
 		conn = mysql.connector.connect(host="localhost",
 			database="chat",
 			user="root",
 			password="vertrigo")
 		cursor = conn.cursor()
-		cursor.execute("INSERT INTO `chat`(`datetime`,`contents`,`username`) VALUES('{0}', '{1}', '{2}')".format(curTime, message, username))
+		cursor.execute(query)
 
 		lastMessage()
 	except Error as err:
